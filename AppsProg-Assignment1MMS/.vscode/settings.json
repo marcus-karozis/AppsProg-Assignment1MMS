@@ -3,5 +3,7 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+    "java.format.settings.url": "https://gist.githubusercontent.com/marcus-karozis/3c5f41c020814c522933fb8745849281/raw/640195296d69f3a3181ca1f25df62c31cec5cb1e/VSCode_JavaCodeStyle.xml",
+    "java.format.settings.profile": ""
 }

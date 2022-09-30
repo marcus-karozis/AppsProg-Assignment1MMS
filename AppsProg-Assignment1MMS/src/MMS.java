@@ -4,19 +4,20 @@ import java.util.ArrayList;
 public class MMS
 {
     private double totalCredits;
-    private double GasdeductionRate;
-    private double DollarAvailable;
+    private double gasDeductionRate;
+    private double dollarAvailable;
     private double deductionRate;
-    private double PayPerCredit;
+    private double payPerCredit;
     private String name;
-    private double Expense;
-    private Memberships Memberships;
-    private ArrayList<MMSlip> MMslips;
-    private SuperMarket SuperMarket;
+    private double expense;
+    private Memberships memberships;
+    private ArrayList<MMSlip> mmSlips;
+    private SuperMarket superMarket;
 
-    public MMS()
+    public MMS(SuperMarket sM, Memberships m)
     {
-
+        this.superMarket = sM;
+        this.memberships = m;
     }
 
 
