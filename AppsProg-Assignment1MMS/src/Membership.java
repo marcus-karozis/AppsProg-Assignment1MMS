@@ -26,9 +26,6 @@ public class Membership
         this.expense = expense;
         this.SuperMarket = SuperMarket;
 
-        this.totalCredits = this.payPerCredit * this.expense;
-        this.DollarAvailable = (int) (this.totalCredits / 200);
-
         if (this.expense < 500)
         {
             this.type = "Bronze";
@@ -64,6 +61,9 @@ public class Membership
             this.deductionRate = 0.25;
             this.GasdeductionRate = 0.3;
         }
+
+        this.totalCredits = this.payPerCredit * this.expense;
+        this.DollarAvailable = (int) (this.totalCredits / 200);
     }
 
     public String getID()

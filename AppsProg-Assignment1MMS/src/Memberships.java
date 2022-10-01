@@ -9,14 +9,14 @@ public class Memberships
     public Memberships()
     {
         this.memberships = new ArrayList<Membership>();
-        this.memberships.add(new Membership("13697480", "Thomas Muller", "thomas.muller@uts.com", 
+        this.memberships.add(new Membership("13697480", "Thomas Muller", "thomas.muller@uts.com",
                 "99991111", "3 Byern St. Sydney 2001", 2134.5));
 
         this.memberships.add(new Membership("14517880", "Alice Stefan", "alice.stefan@uts.com",
                 "88881111", "24 Pitt St. Sydney", 4512.2));
 
-        this.memberships.add(new Membership("13267102", "Lucy Lu", "lucy.lu@uts.com",
-                "98981100", "11 Hunter St. Sydney 2100", 158.4));
+        this.memberships.add(new Membership("13267102", "Lucy Lu", "lucy.lu@uts.com", "98981100",
+                "11 Hunter St. Sydney 2100", 158.4));
 
         this.memberships.add(new Membership("13678020", "Andreas Brehme", "andreas.b@uts.com",
                 "90001222", "91 Sussex St. Sydney 2100", 7596.3));
@@ -28,11 +28,16 @@ public class Memberships
                 "92241188", "155 Jones St. Sydney 2001", 6741.2));
     }
 
+    public ArrayList<Membership> getMembershipsList()
+    {
+        return memberships;
+    }
+
     public Membership getMembership(String name)
     {
         for (Membership m : memberships)
         {
-            if(m.getName().equals(name))
+            if (m.getName().equals(name))
             {
                 return m;
             }
@@ -42,31 +47,33 @@ public class Memberships
 
     public void createMembership()
     {
-        String newName = Utils.string("Name: ");
-        String newEmail = Utils.string("Email: ");
-        String newPhone = Utils.string("Phone: ");
-        String newAddress = Utils.string("Address: ");
-        String newID = Utils.string("ID: ");
-        double newExpence = Utils.amount("expence: ");
+        String newName = Utils.string("Name");
+        String newEmail = Utils.string("Email");
+        String newPhone = Utils.string("Phone");
+        String newAddress = Utils.string("Address");
+        String newID = Utils.string("ID");
+        double newExpence = Utils.amount("expense");
 
-        this.memberships.add(new Membership(newID, newName, newEmail, newPhone, newAddress, newExpence));
-        System.out.println(newName+" record has been created.");
+        this.memberships
+                .add(new Membership(newID, newName, newEmail, newPhone, newAddress, newExpence));
+        System.out.println(newName + " record has been created.");
     }
 
     public void updateMembership(Membership m)
     {
-        String newName = Utils.string("Name: ");
-        String newEmail = Utils.string("Email: ");
-        String newPhone = Utils.string("Phone: ");
-        String newAddress = Utils.string("Address: ");
-        String newID = Utils.string("ID: ");
-        double newExpence = Utils.amount("expence: ");
+        System.out.println("Updating Alice Stefan record: ");
+        String newName = Utils.string("Name");
+        String newEmail = Utils.string("Email");
+        String newPhone = Utils.string("Phone");
+        String newAddress = Utils.string("Address");
+        String newID = Utils.string("ID");
+        double newExpence = Utils.amount("expense");
 
-        this.memberships
-                .set(memberships.indexOf(m),new Membership(newID, newName, newEmail, newPhone, newAddress, newExpence));
-        System.out.println(newName + " record has been created.");
+        this.memberships.set(memberships.indexOf(m), new Membership(newID, newName, newEmail,
+                newPhone, newAddress, m.getExpence() + newExpence));
+        System.out.println(newName + " record has been updated.");
     }
-    
+
     public void deleteMembership(Membership m)
     {
         this.memberships.remove(memberships.indexOf(m));

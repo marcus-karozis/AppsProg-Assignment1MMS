@@ -17,8 +17,8 @@ public class SuperMarkets
     public void auth()
     {
 
-        String em = Utils.string("Email: ");
-        String pass = Utils.string("Password: ");
+        String em = Utils.string("Email");
+        String pass = Utils.string("Password");
         boolean found = false;
         for (SuperMarket sm : superMarkets)
         {
@@ -34,7 +34,7 @@ public class SuperMarkets
         }
         if (!found)
         {
-            System.out.println("Invalid Login!");
+            System.out.println("Incorrect SuperMarket details!");
         }
     }
 
@@ -44,16 +44,16 @@ public class SuperMarkets
         while (true)
         {
             char choice = Utils.choice(
-                    "Session Admin: " + this.user.getName() + " - Menu Commands (C/R/U/D/V/M/X): ");
+                    "Session Admin: " + this.user.getName() + " - Menu Commands (C/R/U/D/V/M/X)");
             if (choice == 'C')
             {
                 this.user.getMemberships().createMembership();
             }
             else if ((choice == 'R') || (choice == 'U') || (choice == 'D'))
             {
-                String n = Utils.string("Name: ");
+                String n = Utils.string("Name");
                 Membership m = this.user.getMemberships().getMembership(n);
-                if (m.equals(null))
+                if (m == null)
                 {
                     System.out.println(n + " record does not exist!");
                 }
@@ -70,10 +70,11 @@ public class SuperMarkets
                     else if (choice == 'D')
                     {
                         this.user.getMemberships().deleteMembership(m);
+                        System.out.println(n + " record has been deleted.");
                     }
-                    
+
                 }
-                
+
             }
             else if (choice == 'V')
             {
@@ -85,6 +86,7 @@ public class SuperMarkets
             }
             else if (choice == 'X')
             {
+                System.out.println("\nMMS Management System:");
                 break;
             }
             else
@@ -93,10 +95,10 @@ public class SuperMarkets
             }
         }
     }
-    
+
     public void adminHelp()
     {
-        System.out.println("Admin Menu:");
+        System.out.println("Admin Menu: ");
         System.out.println("C- Add Membership");
         System.out.println("R- View Membership");
         System.out.println("U- Update Membership");
