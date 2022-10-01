@@ -39,6 +39,13 @@ public class MMSLog
             else if (choice == 'A')
             {
                 MMS newMMS = new MMS(superMarket, superMarket.getMemberships());
+                for (MMS m : mmsLog)
+                {
+                    if (newMMS.matchMMS(m))
+                    {
+                        m.setName(newMMS.getName());
+                    }
+                }
                 mmsLog.add(newMMS);
                 System.out.println("MMS record is created as:" + newMMS.getName());
             }
@@ -52,6 +59,7 @@ public class MMSLog
                     {
                         found = true;
                         entry.printMMS();
+                        break;
                     }
                 }
                 if (!found)

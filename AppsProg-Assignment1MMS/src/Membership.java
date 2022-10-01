@@ -13,7 +13,7 @@ public class Membership
     private int DollarAvailable;
 
     private double deductionRate;
-    private SuperMarket SuperMarket;
+    // private SuperMarket SuperMarket;
 
     public Membership(String ID, String name, String email, String phone, String address,
             double expense)
@@ -24,7 +24,7 @@ public class Membership
         this.phone = phone;
         this.address = address;
         this.expense = expense;
-        this.SuperMarket = SuperMarket;
+        // this.SuperMarket = SuperMarket;
 
         if (this.expense < 500)
         {
@@ -126,10 +126,10 @@ public class Membership
         return this.deductionRate;
     }
 
-    public SuperMarket getSuperMarket()
-    {
-        return this.SuperMarket;
-    }
+    // public SuperMarket getSuperMarket()
+    // {
+    // return this.SuperMarket;
+    // }
 
 
     public String membershipFormat()

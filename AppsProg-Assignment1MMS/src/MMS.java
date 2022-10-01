@@ -33,6 +33,11 @@ public class MMS
         return this.name;
     }
 
+    public void setName(String nm)
+    {
+        this.name = nm;
+    }
+
     public void generateSlips()
     {
         for (Membership m : this.memberships.getMembershipsList())
@@ -108,6 +113,19 @@ public class MMS
         Utils.TotalSumTableEnd();
     }
 
-
+    public boolean matchMMS(MMS m)
+    {
+        if ((this.totalCredits == m.totalCredits) && (this.gasDeductionRate == m.gasDeductionRate)
+                && (this.dollarAvailable == m.dollarAvailable)
+                && (this.deductionRate == m.deductionRate) && (this.payPerCredit == m.payPerCredit)
+                && (this.expense == m.expense))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

@@ -4,7 +4,7 @@ public class Session
 
     public static void main(String[] args)
     {
-        Session run = new Session();
+        new Session();
     }
 
     public Session()
